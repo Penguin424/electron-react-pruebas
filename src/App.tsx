@@ -1,16 +1,16 @@
-const { dialog } = window.require("@electron/remote");
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import "bootswatch/dist/cosmo/bootstrap.min.css";
+
+import Home from "./pages/Home";
 
 const App = () => {
-  const handleClick = () => {
-    dialog.showOpenDialog({
-      properties: ["openDirectory", "openFile", "multiSelections"],
-    });
-  };
   return (
-    <div>
-      <h1>Hola, Mundo</h1>
-      <button onClick={() => handleClick()}>al fin</button>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 };
 

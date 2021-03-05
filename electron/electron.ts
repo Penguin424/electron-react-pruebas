@@ -3,8 +3,6 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const isDev = require("electron-is-dev");
 
-require("@electron/remote/main").initialize();
-
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
